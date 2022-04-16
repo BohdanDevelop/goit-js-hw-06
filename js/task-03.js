@@ -14,11 +14,13 @@ const images = [
 ];
 const ulRef = document.querySelector(".gallery");
 console.log(ulRef);
+let cats = "";
 for (const { url, alt } of images) {
   const newEl = `<li><img width="300" height="200" src=${url} alt=${alt}/></li>`;
-  console.log(newEl);
-  ulRef.insertAdjacentHTML("beforeend", newEl);
+
+  cats += newEl;
 }
 
+ulRef.insertAdjacentHTML("beforeend", cats);
 ulRef.style.cssText =
   "display:flex; list-style: none; justify-content:space-around;";
