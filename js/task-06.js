@@ -1,15 +1,17 @@
 const inputRef = document.querySelector("#validation-input");
 const charachterNumberRequired = Number(inputRef.dataset.length);
 function onInputCheck(event) {
+  function validate(add, remove) {
+    inputRef.classList.add(add);
+    inputRef.classList.remove(remove);
+  }
   const charachterNumber = event.currentTarget.value.length;
   console.log(charachterNumber);
   console.log(charachterNumberRequired);
   if (charachterNumber === charachterNumberRequired) {
-    inputRef.classList.add("valid");
-    inputRef.classList.remove("invalid");
+    validate("valid", "invalid");
   } else {
-    inputRef.classList.add("invalid");
-    inputRef.classList.remove("valid");
+    validate("invalid", "valid");
   }
 }
 
